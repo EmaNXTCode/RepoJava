@@ -32,6 +32,8 @@ class Resta {
 
 public class Suma {
 
+    PersonaMain objPersona;
+
     public void sumaNumero(int numUno, int numDos) {
         int resultado = numUno + numDos;
         System.out.println("La suma de los dos numeros es: " + resultado);
