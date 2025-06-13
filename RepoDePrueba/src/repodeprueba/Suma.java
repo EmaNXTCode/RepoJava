@@ -40,62 +40,63 @@ public class Suma {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Suma objSuma = new Suma();
-        Multi objMulti = new Multi();
-        Division objDiv = new Division();
-        Resta objResta = new Resta();
-        int opcion = 0;
-        do {
+        try (Scanner scanner = new Scanner(System.in)) {
+            Suma objSuma = new Suma();
+            Multi objMulti = new Multi();
+            Division objDiv = new Division();
+            Resta objResta = new Resta();
+            int opcion = 0;
+            do {
 
-            System.out.println("1. Suma");
-            System.out.println("2. Multiplicacion");
-            System.out.println("3. Division");
-            System.out.println("4. Resta");
-            System.out.println("5. Salir");
-            System.out.println("Ingresa una opcion: ");
-            opcion = scanner.nextInt();
-            switch (opcion) {
-                case 1:
-                    System.out.println("Ingresa el primer numero: ");
-                    int numUno = scanner.nextInt();
-                    System.out.println("Ingresa el segundo numero: ");
-                    int numDos = scanner.nextInt();
-                    objSuma.sumaNumero(numUno, numDos);
-                    break;
-                case 2:
-                    System.out.println("Ingresa un numero: ");
-                    numUno = scanner.nextInt();
-                    System.out.println("Ingresa otro numero");
-                    numDos = scanner.nextInt();
-                    objMulti.multiplicacionNumero(numUno, numDos);
-                    break;
-                case 3:
-                    System.out.println("Ingresa un numero: ");
-                    numUno = scanner.nextInt();
-                    System.out.println("Ingresa otro numero: ");
-                    numDos = scanner.nextInt();
-                    objDiv.divisionNumeros(numUno, numDos);
-                    break;
-                case 4:
-                    System.out.println("Ingresa un numero: ");
-                    numUno = scanner.nextInt();
-                    System.out.println("Ingresa otro numero: ");
-                    numDos = scanner.nextInt();
-                    objResta.restaNumeros(numUno, numDos);
-                    break;
-                case 5:
-                    scanner.nextLine(); // limpiar buffer
-                    System.out.println("¿Quieres seguir en el menú? (si/no): ");
-                    String respuesta = scanner.nextLine();
-                    if (respuesta.equalsIgnoreCase("si")) {
-                        opcion = 0; // para que el ciclo siga
-                    } else {
-                        System.out.println("Saliste del programa");
-                        opcion = 5; // para salir del ciclo
-                    }
-                    break;
-            }
-        } while (opcion != 5);
+                System.out.println("1. Suma");
+                System.out.println("2. Multiplicacion");
+                System.out.println("3. Division");
+                System.out.println("4. Resta");
+                System.out.println("5. Salir");
+                System.out.println("Ingresa una opcion: ");
+                opcion = scanner.nextInt();
+                switch (opcion) {
+                    case 1:
+                        System.out.println("Ingresa el primer numero: ");
+                        int numUno = scanner.nextInt();
+                        System.out.println("Ingresa el segundo numero: ");
+                        int numDos = scanner.nextInt();
+                        objSuma.sumaNumero(numUno, numDos);
+                        break;
+                    case 2:
+                        System.out.println("Ingresa un numero: ");
+                        numUno = scanner.nextInt();
+                        System.out.println("Ingresa otro numero");
+                        numDos = scanner.nextInt();
+                        objMulti.multiplicacionNumero(numUno, numDos);
+                        break;
+                    case 3:
+                        System.out.println("Ingresa un numero: ");
+                        numUno = scanner.nextInt();
+                        System.out.println("Ingresa otro numero: ");
+                        numDos = scanner.nextInt();
+                        objDiv.divisionNumeros(numUno, numDos);
+                        break;
+                    case 4:
+                        System.out.println("Ingresa un numero: ");
+                        numUno = scanner.nextInt();
+                        System.out.println("Ingresa otro numero: ");
+                        numDos = scanner.nextInt();
+                        objResta.restaNumeros(numUno, numDos);
+                        break;
+                    case 5:
+                        scanner.nextLine(); // limpiar buffer
+                        System.out.println("¿Quieres seguir en el menú? (si/no): ");
+                        String respuesta = scanner.nextLine();
+                        if (respuesta.equalsIgnoreCase("si")) {
+                            opcion = 0; // para que el ciclo siga
+                        } else {
+                            System.out.println("Saliste del programa");
+                            opcion = 5; // para salir del ciclo
+                        }
+                        break;
+                }
+            } while (opcion != 5);
+        }
     }
 }
